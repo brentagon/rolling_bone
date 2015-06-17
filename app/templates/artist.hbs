@@ -1,0 +1,8 @@
+{{model.name}}
+
+<ul>
+  {{#each album in model.albums}}
+    <li> {{#link-to 'album' album.id}} {{album.title}} {{/link-to}} </li>
+  {{/each}}
+
+</ul>

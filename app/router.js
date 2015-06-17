@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('new-review');
   });
   this.route('artists');
+  this.resource('artist', {path:'/artists/:artist_id'})
 });
 
 export default Router;

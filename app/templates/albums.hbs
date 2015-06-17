@@ -2,7 +2,7 @@
   These are all the albums. There are no albums other than these albums.
   <ul>
     {{#each album in model}}
-      <li> {{#link-to 'album' album.id}} {{album.title}} by {{album.artist}} {{/link-to}} </li>
+      <li> {{#link-to 'album' album.id}} {{album.title}} {{/link-to}} by {{#link-to 'artist' album.artist.id}} {{album.artist.name}} {{/link-to}} </li>
     {{/each}}
   </ul>
 </p>
