@@ -1,0 +1,17 @@
+<h3>{{model.title}} by {{model.artist}}</h3>
+
+<ul>
+  {{#each review in model.reviews}}
+    <li>
+      {{review.rating}}
+      {{review.title}}
+      by {{review.author}}
+      {{review.body}}
+    </li>
+  {{debugger}}
+  {{/each}}
+</ul>
+
+{{#link-to 'album.new-review'}}Review this album{{/link-to}}
+
+{{outlet}}

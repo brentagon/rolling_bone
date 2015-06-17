@@ -1,0 +1,9 @@
+<div class="new-review-form">
+  {{input type="text" placeholder="Title" value=title class="title-input"}}
+  {{input type="text" placeholder="Author" value=author class="author-input"}}
+  {{textarea type="text" placeholder="Body" value=body class="body-input"}}
+
+  {{view "select" content=ratings value=rating}}
+
+  <button {{action 'addReview'}} class="submit">Submit</button>
+</div>

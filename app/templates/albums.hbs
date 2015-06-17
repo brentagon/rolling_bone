@@ -1,0 +1,12 @@
+<p>
+  These are all the albums. There are no albums other than these albums.
+  <ul>
+    {{#each album in model}}
+      <li> {{#link-to 'album' album.id}} {{album.title}} by {{album.artist}} {{/link-to}} </li>
+    {{/each}}
+  </ul>
+</p>
+
+{{#link-to 'albums.new'}}Add a new album{{/link-to}}
+
+{{outlet}}
