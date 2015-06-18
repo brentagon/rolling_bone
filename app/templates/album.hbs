@@ -1,18 +1,33 @@
-<h3>{{model.JSON.title}}</h3>
+<img src='{{model.JSON.thumb}}' class="albumimage">
+<br>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading text-center">{{model.JSON.title}}</div>
 
-<img src="" alt="" />
+  <!-- Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+      <th>Rating</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+    <tbody>
+      {{#each review in model.reviews}}
+        <tr>
+          <td>{{review.rating}}</td>
+          <td>{{review.title}}</td>
+          <td>{{review.author}}</td>
+          <td>{{review.body}}</td>
+        </tr>
+      {{/each}}
+  </tbody>
+  </table>
+</div>
 
-<ul>
-  {{#each review in model.reviews}}
-    <li>
-      {{review.rating}}
-      {{review.title}}
-      by {{review.author}}
-      {{review.body}}
-    </li>
-  {{/each}}
-</ul>
-
-{{#link-to 'album.new-review'}}Review this album{{/link-to}}
+<span class="btn btn-default">{{#link-to 'album.new-review'}}Review this album{{/link-to}}</span>
+<span class="btn btn-default"><a href='{{youtube-urler model.JSON.title}}'>Find this album on YouTube</a></span>
 
 {{outlet}}

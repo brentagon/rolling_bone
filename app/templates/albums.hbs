@@ -1,10 +1,14 @@
-<p>
-  These are all the albums. There are no albums other than these albums.
-  <ul>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Your Collection</div>
+
+  <!-- List group -->
+
+  <ul class="list-group">
     {{#each album in model }}
-      <li><img src='{{album.thumb}}'>{{#link-to 'album' album.id}}{{album.title}}{{/link-to}}</li>
+      <li class="list-group-item"><img src='{{album.thumb}}'/>{{#link-to 'album' album.id}} <span class="albumTitle">{{album.title}}</span> {{/link-to}}</li>
     {{/each}}
   </ul>
-</p>
+</div>
 
 {{outlet}}

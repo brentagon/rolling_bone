@@ -1,13 +1,13 @@
-<div class="header">
-  Rolling Bone
-  {{#link-to 'about'}}About{{/link-to}}
-  {{#link-to 'albums'}}Your Albums{{/link-to}}
-  <!-- {{#link-to 'artists'}}Artists{{/link-to}} -->
-  {{#link-to 'search-input'}}Search{{/link-to}}
-</div>
-
-<hr>
-
 <div class="container">
+
+  <nav class='navbar navbar-default' role='navigation'>
+    <ul class='nav navbar-nav'>
+      <li>{{#link-to 'about'}}About{{/link-to}}</li>
+      <li>{{#link-to 'albums'}}Your Collection{{/link-to}}</li>
+      <li>{{#link-to 'search-input'}}Search for Albums{{/link-to}}</li>
+    </ul>
+  </nav>
+
   {{outlet}}
+
 </div>

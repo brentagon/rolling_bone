@@ -15,7 +15,7 @@ export default Ember.Route.extend({
         });
         return {
           JSON: JSON,
-          reviews: foundAlbum.get('reviews')
+          reviews: foundAlbum.get('reviews'),
         };
       });
     });

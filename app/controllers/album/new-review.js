@@ -6,7 +6,6 @@ export default Ember.Controller.extend({
   actions: {
     addReview: function() {
       var albumId = this.get('model.JSON.id');
-      debugger;
       var albumObject;
       var controller = this;
       this.store.find('album').then(function(albums) {
