@@ -1,4 +1,6 @@
-<h3>{{model.title}} by {{model.artist.name}}</h3>
+<h3>{{model.JSON.title}}</h3>
+
+<img src="" alt="" />
 
 <ul>
   {{#each review in model.reviews}}
@@ -8,7 +10,6 @@
       by {{review.author}}
       {{review.body}}
     </li>
-  {{debugger}}
   {{/each}}
 </ul>
 

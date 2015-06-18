@@ -13,8 +13,6 @@ Router.map(function() {
   this.resource('album', {path: '/albums/:album_id'}, function() {
     this.route('new-review');
   });
-  this.route('artists');
-  this.resource('artist', {path:'/artists/:artist_id'});
   this.resource('search-input', function() {
     this.resource('search', {path: '/search/:artist_name'});
   });
