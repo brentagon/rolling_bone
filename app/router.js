@@ -15,6 +15,9 @@ Router.map(function() {
   });
   this.route('artists');
   this.resource('artist', {path:'/artists/:artist_id'});
+  this.resource('search-input', function() {
+    this.resource('search', {path: '/search/:artist_name'});
+  });
 });
 
 export default Router;
