@@ -5,24 +5,28 @@ export default Ember.Controller.extend({
   actions: {
     addAlbum: function() {
       var controller = this;
-      this.store.find('artist', {'name': this.get('artist')}).then(function(artists) {
+      var artist = this.get('artist');
+      var albumArtist;
+      this.store.find('artist').then(function(artists) {
 
-        // TODO: this.store.find('artist', {'name': this.get('artist')}) always returns the full list of objects. Make this not so.
+        var filteredArtist = artists.filterBy('name', artist);
 
-        debugger;
-
-        var newArtist = controller.store.createRecord('artist', {
-          name: controller.get('artist')
-        });
+        if(filteredArtist.get('length') === 0) {
+          albumArtist = controller.store.createRecord('artist', {
+            name: controller.get('artist')
+          });
+        } else {
+          albumArtist = artists.filterBy('name', artist).get('firstObject');
+        }
 
         var newAlbum = controller.store.createRecord('album', {
           title: controller.get('title'),
-          artist: newArtist
+          artist: albumArtist
         });
 
         newAlbum.save().then(function() {
-          newArtist.get('albums').pushObject(newAlbum);
-          newArtist.save().then(function() {
+          albumArtist.get('albums').pushObject(newAlbum);
+          albumArtist.save().then(function() {
             controller.setProperties({
               title: '',
               artist: ''
